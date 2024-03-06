@@ -1,0 +1,16 @@
+<launch>
+    <!-- Launch robot state publisher -->
+    <node pkg="robot_state_publisher" exec="robot_state_publisher" name="robot_state_publisher" output="screen" 
+        args="$(find-pkg-share Easys_description)/model/urdf/easys.urdf">
+    </node>
+
+    <!-- Launch joint state publisher GUI -->
+    <node pkg="joint_state_publisher_gui" exec="joint_state_publisher_gui" name="joint_state_publisher_gui" output="screen" 
+        args="$(find-pkg-share Easys_description)/model/urdf/easys.urdf">
+    </node>
+
+    <!-- Launch RViz2 -->
+    <arg name="rviz_config_path" default="$(find-pkg-share Easys_description)/config/rviz/view_model.rviz" />
+    <node pkg="rviz2" exec="rviz2" args="-d $(var rviz_config_path)">
+    </node>
+</launch>

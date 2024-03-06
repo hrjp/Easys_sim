@@ -1,0 +1,21 @@
+<robot name="test_robot">
+  <link name="base_link"/>
+
+  <link name="body_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://Easys_description/model/stl/easys.stl"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="body_joint" type="fixed">
+    <parent link="base_link"/>
+    <child  link="body_link"/>
+  </joint>
+
+  
+
+
+</robot>
