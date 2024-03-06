@@ -1,6 +1,7 @@
 <robot name="test_robot">
   <link name="base_link"/>
 
+  <!-- body -->
   <link name="body_link">
     <visual>
       <geometry>
@@ -15,7 +16,69 @@
     <child  link="body_link"/>
   </joint>
 
-  
+  <!-- left up thruster -->
+  <link name="left_up_thruster_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.1" radius="0.05"/>
+      </geometry>
+      <origin xyz="0.0 0 0" rpy="0 1.57 0"/>
+    </visual>
+  </link>
+
+  <joint name="left_up_thruster_joint" type="fixed">
+    <parent link="base_link"/>
+    <child  link="left_up_thruster_link"/>
+    <origin xyz="0.5 0 0" rpy="0 0.785 0"/>
+  </joint>
+
+  <!-- right up thruster -->
+  <link name="right_up_thruster_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.1" radius="0.05"/>
+      </geometry>
+      <origin xyz="0.0 0 0" rpy="0 1.57 0"/>
+    </visual>
+  </link>
+
+  <joint name="right_up_thruster_joint" type="fixed">
+    <parent link="base_link"/>
+    <child  link="right_up_thruster_link"/>
+    <origin xyz="-0.5 0 0" rpy="0 0.785 3.14"/>
+  </joint>
+
+  <!-- left down thruster -->
+  <link name="left_down_thruster_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.1" radius="0.05"/>
+      </geometry>
+      <origin xyz="0.0 0 0" rpy="0 1.57 0"/>
+    </visual>
+  </link>
+
+  <joint name="left_down_thruster_joint" type="fixed">
+    <parent link="base_link"/>
+    <child  link="left_down_thruster_link"/>
+    <origin xyz="0.2 0 0" rpy="0 0 -1.57"/>
+  </joint>
+
+  <!-- right down thruster -->
+  <link name="right_down_thruster_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.1" radius="0.05"/>
+      </geometry>
+      <origin xyz="0.0 0 0" rpy="0 1.57 0"/>
+    </visual>
+  </link>
+
+  <joint name="right_down_thruster_joint" type="fixed">
+    <parent link="base_link"/>
+    <child  link="right_down_thruster_link"/>
+    <origin xyz="-0.2 0 0" rpy="0 0 -1.57"/>
+  </joint>
 
 
 </robot>
