@@ -46,7 +46,7 @@
   <joint name="left_down_thruster_joint" type="fixed">
     <parent link="base_link"/>
     <child  link="left_down_thruster_link"/>
-    <origin xyz="0.116 0.1145 0.1215" rpy="0 0 -1.57"/>
+    <origin xyz="0.116 0.04715 0.1215" rpy="0 0 -1.57"/>
   </joint>
 
 
@@ -57,7 +57,7 @@
   <joint name="right_down_thruster_joint" type="fixed">
     <parent link="base_link"/>
     <child  link="right_down_thruster_link"/>
-    <origin xyz="-0.116 0 0.1215" rpy="0 0 -1.57"/>
+    <origin xyz="-0.116 0.04715 0.1215" rpy="0 0 -1.57"/>
   </joint>
 
 
