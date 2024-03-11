@@ -1,0 +1,6 @@
+# left down thruster
+- ros_topic_name: "/left_down/cmd_thrustor"
+  gz_topic_name: "/easys/left_down/cmd_thrustor"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  lazy: true

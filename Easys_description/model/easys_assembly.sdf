@@ -3,14 +3,14 @@
     <include>
         <!-- robot model -->
         <uri>easys.sdf</uri>
-        
+
         <!-- Thruster plugin -->
         <plugin
             filename="gz-sim-thruster-system"
             name="gz::sim::systems::Thruster">
             <namespace>easys</namespace>
             <joint_name>left_down_thruster_joint</joint_name>
-            <topic>left_down</topic>
+            <topic>left_down/cmd_thrustor</topic>
             <thrust_coefficient>0.004422</thrust_coefficient>
             <fluid_density>1000</fluid_density>
             <propeller_diameter>0.2</propeller_diameter>
