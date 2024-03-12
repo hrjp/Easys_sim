@@ -4,6 +4,17 @@
         <!-- robot model -->
         <uri>model://easys.sdf</uri>
 
+        <!-- Global odometer -->
+        <plugin
+            filename="gz-sim-odometry-publisher-system"
+            name="gz::sim::systems::OdometryPublisher">
+            <odom_publish_frequency>50</odom_publish_frequency>
+            <odom_topic>/odom</odom_topic>
+            <odom_frame>/map</odom_frame>
+            <robot_base_frame>base_link</robot_base_frame>
+            <tf_topic>/tf</tf_topic>
+        </plugin>
+
         <!-- Thruster plugin -->
         <plugin
             filename="gz-sim-thruster-system"

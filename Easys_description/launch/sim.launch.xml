@@ -1,0 +1,20 @@
+<launch>
+    <!-- gazebo sim -->
+    <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py" >
+        <arg name="gz_args" value="empty_world_easys.sdf"/>
+    </include>
+
+    <!-- ros gz bridge -->
+    <node pkg="ros_gz_bridge" exec="parameter_bridge" name="ros_gz_bridge" output="screen" >
+        <param name="config_file" value="$(find-pkg-share Easys_description)/config/ros_gz_bridge/bridge_topic.yaml"/>
+    </node>
+
+    <!-- robot state publisher -->
+    <node pkg="robot_state_publisher" exec="robot_state_publisher" name="robot_state_publisher" output="screen" 
+        args="$(find-pkg-share Easys_description)/model/urdf/easys.urdf">
+    </node>
+    <!-- rviz2 -->
+    <arg name="rviz_config_path" default="$(find-pkg-share Easys_description)/config/rviz/sim.rviz" />
+    <node pkg="rviz2" exec="rviz2" args="-d $(var rviz_config_path)">
+    </node>
+</launch>

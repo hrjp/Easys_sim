@@ -25,7 +25,7 @@
 
 -->
 <sdf version="1.6">
-  <world name="buoyant_tethys">
+  <world name="easys_world">
     <scene>
       <!-- For turquoise ambient -->
       <ambient>0.0 1.0 1.0</ambient>

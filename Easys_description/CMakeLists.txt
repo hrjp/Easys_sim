@@ -26,6 +26,7 @@ if(BUILD_TESTING)
 endif()
 
 # Hooks
+# install model files
 configure_file(
   "hooks/hook.dsv.in"
   "${CMAKE_CURRENT_BINARY_DIR}/hooks/hook.dsv" @ONLY
