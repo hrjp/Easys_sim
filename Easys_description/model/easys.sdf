@@ -235,7 +235,7 @@
       name="gz::sim::systems::Imu">
     </plugin>
     <link name="imu_link">
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 0 0 0 1.57</pose>
         <sensor name="imu" type="imu">
             <always_on>1</always_on>
             <update_rate>100</update_rate>
@@ -247,7 +247,7 @@
     <joint name="imu_joint" type="fixed">
         <parent>base_link</parent>
         <child>imu_link</child>
-        <pose>0 0 0 0 0 -1.57</pose>
+        <pose>0 0 0 0 0 0</pose>
     </joint>
 
     <!-- camera -->
@@ -257,7 +257,7 @@
       <render_engine>ogre2</render_engine>
     </plugin>
     <link name="camera_link">
-      <pose>0 0 0 0 0 0</pose>
+      <pose>0 0 0 0 0 -1.57</pose>
       <sensor name="camera" type="camera">
         <camera>
           <horizontal_fov>1.047</horizontal_fov>
