@@ -73,7 +73,7 @@
       <pose>0 0 0 0 0 1.57</pose>
 
       <!-- robot model -->
-      <uri>easys_assembly.sdf</uri>
+      <uri>model://easys_assembly.sdf</uri>
       
     </include>
 

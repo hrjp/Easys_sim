@@ -32,3 +32,15 @@ install(
   DIRECTORY model launch config
   DESTINATION share/${PROJECT_NAME}
 )
+
+
+
+# .sdf files are installed in ~/.gazebo/models
+# https://gazebosim.org/api/sim/7/resources.html
+set(HOME_DIRECTORY $ENV{HOME})
+install(
+  DIRECTORY model/
+  DESTINATION ${HOME_DIRECTORY}/.gz/fuel
+  DESTINATION ${HOME_DIRECTORY}/.ignition/fuel
+  FILES_MATCHING PATTERN "*"
+)
