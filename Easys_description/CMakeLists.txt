@@ -25,23 +25,6 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
-# # Exports
-# install(
-#   EXPORT ${PROJECT_NAME}
-#   FILE ${PROJECT_NAME}-targets.cmake
-#   NAMESPACE ${PROJECT_NAME}::
-#   DESTINATION share/${PROJECT_NAME}/cmake)
-
-# include(CMakePackageConfigHelpers)
-# configure_package_config_file(${CMAKE_CURRENT_SOURCE_DIR}/cmake/Config.cmake.in
-#   "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
-#   INSTALL_DESTINATION "share/${PROJECT_NAME}/cmake"
-#   NO_SET_AND_CHECK_MACRO
-#   NO_CHECK_REQUIRED_COMPONENTS_MACRO)
-# install(FILES
-#   ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake
-#   DESTINATION share/${PROJECT_NAME}/cmake)
-
 # Hooks
 configure_file(
   "hooks/hook.dsv.in"
@@ -51,9 +34,6 @@ configure_file(
   "hooks/hook.sh.in"
   "${CMAKE_CURRENT_BINARY_DIR}/hooks/hook.sh" @ONLY
 )
-
-
-
 
 install(
   DIRECTORY 
@@ -65,12 +45,3 @@ install(
 )
 
 ament_package()
-# .sdf files are installed in ~/.gazebo/models
-# https://gazebosim.org/api/sim/7/resources.html
-# set(HOME_DIRECTORY $ENV{HOME})
-# install(
-#   DIRECTORY model/
-#   DESTINATION ${HOME_DIRECTORY}/.gz/fuel
-#   DESTINATION ${HOME_DIRECTORY}/.ignition/fuel
-#   FILES_MATCHING PATTERN "*"
-# )
