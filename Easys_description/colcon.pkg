@@ -1,0 +1,6 @@
+{
+    "hooks": [
+        "share/Easys_description/hooks/hook.dsv",
+        "share/Easys_description/hooks/hook.sh"
+    ]
+}
