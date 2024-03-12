@@ -8,6 +8,9 @@
         <mesh filename="package://Easys_description/model/stl/easys.stl"/>
       </geometry>
       <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="red">
+        <color rgba="0.9 0.1 0.1 2.0"/>
+      </material>
     </visual>
   </link>
 
