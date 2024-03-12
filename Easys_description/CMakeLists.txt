@@ -41,6 +41,7 @@ install(
     model 
     launch 
     config
+    world
     ${CMAKE_CURRENT_BINARY_DIR}/hooks
   DESTINATION share/${PROJECT_NAME}
 )

@@ -1,7 +1,12 @@
 <launch>
+    <!-- args -->
+    <!-- <arg name="world_file" default="empty_world_easys.sdf" description="gazebo world file (.sdf)"/> -->
+    <arg name="world_file" default="warehouse_world_easys.sdf" description="gazebo world file (.sdf)"/>
+
+
     <!-- gazebo sim -->
     <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py" >
-        <arg name="gz_args" value="warehouse_world_easys.sdf"/>
+        <arg name="gz_args" value="$(var world_file)"/>
     </include>
 
     <!-- ros gz bridge -->
