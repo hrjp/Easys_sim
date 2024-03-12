@@ -4,7 +4,7 @@
         <!-- robot model -->
         <uri>model://easys.sdf</uri>
 
-        <!-- Global odometer -->
+        <!-- TF, odometry plugin -->
         <plugin
             filename="gz-sim-odometry-publisher-system"
             name="gz::sim::systems::OdometryPublisher">

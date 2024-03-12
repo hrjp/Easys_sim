@@ -1,7 +1,7 @@
 <launch>
     <!-- gazebo sim -->
     <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py" >
-        <arg name="gz_args" value="empty_world_easys.sdf"/>
+        <arg name="gz_args" value="warehouse_world_easys.sdf"/>
     </include>
 
     <!-- ros gz bridge -->
