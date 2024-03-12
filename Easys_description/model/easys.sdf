@@ -47,8 +47,7 @@
 
   <!-- left down thruster -->
     <link name="left_down_thruster_link">
-      <!-- <pose>0.116 0.04715 0.1215 0 0 -1.57</pose> -->
-      <pose>0 0 0 0 0 0</pose>
+      <pose>0.116 0.04715 0.1215 0 0 0</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
         <mass>0.09</mass>
@@ -68,14 +67,21 @@
             </box>
         </geometry>
       </collision>
+      <visual name="left_down_visual">
+        <geometry>
+              <box>
+                <size>0.08 0.05 0.08</size>
+              </box>
+          </geometry>
+      </visual>
     </link>
 
     <joint name="left_down_thruster_joint" type="revolute">
       <parent>base_link</parent>
       <child>left_down_thruster_link</child>
-      <pose>0.116 0.04715 0.1215 0 0 -1.57</pose>
+      <pose>0 0 0 0 0 0</pose>
       <axis>
-        <xyz>1 0 0</xyz>
+        <xyz>0 -1 0</xyz>
         <limit>
             <lower>-1e+12</lower>
             <upper>1e+12</upper>
@@ -87,7 +93,7 @@
 
     <!-- right down thruster -->
     <link name="right_down_thruster_link">
-      <pose>0 0 0 0 0 0</pose>
+      <pose>-0.116 0.04715 0.1215 0 0 0</pose>
       <inertial>
           <pose>0 0 0 0 0 0</pose>
           <mass>0.09</mass>
@@ -107,14 +113,21 @@
               </box>
           </geometry>
       </collision>
+      <visual name="right_down_visual">
+        <geometry>
+              <box>
+                <size>0.08 0.05 0.08</size>
+              </box>
+          </geometry>
+      </visual>
     </link>
 
     <joint name="right_down_thruster_joint" type="revolute">
       <parent>base_link</parent>
       <child>right_down_thruster_link</child>
-      <pose>-0.116 0.04715 0.1215 0 0 -1.57</pose>
+      <pose>0 0 0 0 0 0</pose>
       <axis>
-        <xyz>1 0 0</xyz>
+        <xyz>0 -1 0</xyz>
         <limit>
             <lower>-1e+12</lower>
             <upper>1e+12</upper>
@@ -126,7 +139,7 @@
 
     <!-- left up thruster -->
     <link name="left_up_thruster_link">
-      <pose>0 0 0 0 0 0</pose>
+      <pose>0.08255 0 0.22255 0.785 0 1.57</pose>
       <inertial>
           <pose>0 0 0 0 0 0</pose>
           <mass>0.09</mass>
@@ -146,14 +159,21 @@
               </box>
           </geometry>
       </collision>
+      <visual name="left_up_visual">
+        <geometry>
+              <box>
+                <size>0.08 0.05 0.08</size>
+              </box>
+          </geometry>
+      </visual>
     </link>
 
     <joint name="left_up_thruster_joint" type="revolute">
       <parent>base_link</parent>
       <child>left_up_thruster_link</child>
-      <pose>0.08255 0 0.22255 0 0.785 0</pose>
+      <pose>0 0 0 0 0 0</pose>
       <axis>
-        <xyz>1 0 0</xyz>
+        <xyz>0 1 0</xyz>
         <limit>
             <lower>-1e+12</lower>
             <upper>1e+12</upper>
@@ -165,7 +185,7 @@
     
     <!-- right up thruster -->
     <link name="right_up_thruster_link">
-      <pose>0 0 0 0 0 0</pose>
+      <pose>-0.08255 0 0.22255 -0.785 0 1.57</pose>
       <inertial>
           <pose>0 0 0 0 0 0</pose>
           <mass>0.09</mass>
@@ -185,14 +205,21 @@
               </box>
           </geometry>
       </collision>
+      <visual name="left_up_visual">
+        <geometry>
+              <box>
+                <size>0.08 0.05 0.08</size>
+              </box>
+          </geometry>
+      </visual>
     </link>
 
     <joint name="right_up_thruster_joint" type="revolute">
       <parent>base_link</parent>
       <child>right_up_thruster_link</child>
-      <pose>-0.08255 0 0.22255 0 0.785 3.14</pose>
+      <pose>0 0 0 0 0 0</pose>
       <axis>
-        <xyz>1 0 0</xyz>
+        <xyz>0 -1 0</xyz>
         <limit>
             <lower>-1e+12</lower>
             <upper>1e+12</upper>
@@ -220,7 +247,7 @@
     <joint name="imu_joint" type="fixed">
         <parent>base_link</parent>
         <child>imu_link</child>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 0 0 0 -1.57</pose>
     </joint>
 
     <!-- camera -->

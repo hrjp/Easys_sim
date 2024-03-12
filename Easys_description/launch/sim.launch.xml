@@ -10,7 +10,7 @@
     </include>
 
     <!-- ros gz bridge -->
-    <node pkg="ros_gz_bridge" exec="parameter_bridge" name="ros_gz_bridge" output="screen" >
+    <node pkg="ros_gz_bridge" exec="parameter_bridge" name="ros_gz_bridge"  >
         <param name="config_file" value="$(find-pkg-share Easys_description)/config/ros_gz_bridge/bridge_topic.yaml"/>
     </node>
 
@@ -18,6 +18,23 @@
     <node pkg="robot_state_publisher" exec="robot_state_publisher" name="robot_state_publisher" output="screen" 
         args="$(find-pkg-share Easys_description)/model/urdf/easys.urdf">
     </node>
+
+    <!-- joy -->
+    <node pkg="joy" exec="joy_node" name="joy_node" output="screen">
+    </node>
+
+    <!-- joy to cmd-->
+    <node pkg="Easys_ros" exec="joy2cmd" name="joy2cmd" output="screen">
+    </node>
+
+    <!-- Easys controller-->
+    <node pkg="Easys_ros" exec="Easys_controller" name="Easys_controller" output="screen">
+    </node>
+
+    <!-- thruster output converter-->
+    <node pkg="Easys_ros" exec="thruster_output_converter" name="thruster_output_converter" output="screen">
+    </node>
+
     <!-- rviz2 -->
     <arg name="rviz_config_path" default="$(find-pkg-share Easys_description)/config/rviz/sim.rviz" />
     <node pkg="rviz2" exec="rviz2" args="-d $(var rviz_config_path)">

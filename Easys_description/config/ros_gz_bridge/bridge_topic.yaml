@@ -1,25 +1,25 @@
 # This file is used to bridge the ROS topics to Gazebo topics
 # left down thruster
-- ros_topic_name: "/left_down/cmd_thrustor"
-  gz_topic_name: "/easys/left_down/cmd_thrustor"
+- ros_topic_name: "/left_down/cmd_thruster"
+  gz_topic_name: "/easys/left_down/cmd_thruster"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
 
 # right down thruster
-- ros_topic_name: "/right_down/cmd_thrustor"
-  gz_topic_name: "/easys/right_down/cmd_thrustor"
+- ros_topic_name: "/right_down/cmd_thruster"
+  gz_topic_name: "/easys/right_down/cmd_thruster"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
 
 # left up thruster
-- ros_topic_name: "/left_up/cmd_thrustor"
-  gz_topic_name: "/easys/left_up/cmd_thrustor"
+- ros_topic_name: "/left_up/cmd_thruster"
+  gz_topic_name: "/easys/left_up/cmd_thruster"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
 
 # right up thruster
-- ros_topic_name: "/right_up/cmd_thrustor"
-  gz_topic_name: "/easys/right_up/cmd_thrustor"
+- ros_topic_name: "/right_up/cmd_thruster"
+  gz_topic_name: "/easys/right_up/cmd_thruster"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
 
