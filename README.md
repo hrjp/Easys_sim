@@ -11,4 +11,5 @@ cd colcon_ws/src
 git clone https://github.com/hrjp/Easys_sim
 cd ..
 colcon build --symlink-install
+source install/setup.sh
 ```

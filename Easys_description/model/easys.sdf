@@ -201,7 +201,27 @@
         </limit>
       </axis>
     </joint>
-  </model>
 
+    <!-- IMU -->
+    <plugin
+      filename="gz-sim-imu-system"
+      name="gz::sim::systems::Imu">
+    </plugin>
+    <link name="imu_link">
+        <pose>0 0 0 0 0 0</pose>
+        <sensor name="imu" type="imu">
+            <always_on>1</always_on>
+            <update_rate>100</update_rate>
+            <visualize>true</visualize>
+            <topic>imu</topic>
+            <enable_metrics>true</enable_metrics>
+        </sensor>
+    </link>
+    <joint name="imu_joint" type="fixed">
+        <parent>base_link</parent>
+        <child>imu_link</child>
+        <pose>0 0 0 0 0 0</pose>
+    </joint>
+  </model>
   
 </sdf>
