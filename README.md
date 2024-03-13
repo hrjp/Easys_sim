@@ -14,7 +14,7 @@ sudo apt update
 sudo apt install -y libgz-sim7-dev ros-humble-ros-gzgarden
 cd colcon_ws/src
 git clone https://github.com/hrjp/Easys_sim
-git clone https://github.com/tamago117/Easys_ros
+git clone https://github.com/hrjp/Easys_ros
 cd ..
 colcon build --symlink-install
 source install/setup.sh
