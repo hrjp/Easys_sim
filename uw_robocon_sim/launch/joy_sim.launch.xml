@@ -1,0 +1,8 @@
+<launch>
+    <!-- args -->
+    <arg name="world_file" default="warehouse_world_easys.sdf" description="gazebo world file (.sdf)"/>
+
+    <include file="$(find-pkg-share Easys_description)/launch/sim.launch.xml">
+        <arg name="world_file" value="$(var world_file)"/>
+    </include>
+</launch>
