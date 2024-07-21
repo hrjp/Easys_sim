@@ -1,0 +1,6 @@
+{
+    "hooks": [
+        "share/uw_robocon_sim/hooks/hook.dsv",
+        "share/uw_robocon_sim/hooks/hook.sh"
+    ]
+}
