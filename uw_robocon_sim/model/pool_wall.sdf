@@ -18,10 +18,25 @@
             </box>
         </geometry>
         <material>
-          <ambient>0.9 0.9 0.9 1</ambient>
+          <diffuse>1.0 1.0 1.0</diffuse>
+          <specular>1.0 1.0 1.0</specular>
+          <pbr>
+            <metal>
+              <albedo_map>material/pool_wall.png</albedo_map>
+              <normal_map>material/pool_wall.png</normal_map>
+              <metalness_map>material/pool_wall.png</metalness_map>
+              <roughness_map>material/pool_wall.png</roughness_map>
+            </metal>
+          </pbr>
+          <script>
+            <uri>material/</uri>
+            <name>PoolWallMaterial</name>
+            <scale>1.0 0.1</scale>
+          </script>
+          <!-- <ambient>0.9 0.9 0.9 1</ambient>
           <diffuse>0.5 1.0 1.0 1</diffuse>
           <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
+          <emissive>0 0 0 1</emissive> -->
         </material>
       </visual>
     </link>

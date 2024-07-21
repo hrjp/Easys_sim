@@ -65,26 +65,18 @@
       <pose>0 0 0 0 0 0</pose>
     </include>
 
+    <!--balloons-->
     <include>
-      <uri>model://balloon.sdf</uri>
-      <!-- <static>true</static> -->
-      <pose>0 -1 1 0 0 0</pose>
-      <name>balloon</name>
+      <uri>model://balloons.sdf</uri>
+      <pose>0 0 0 0 0 0</pose>
     </include>
-
-    <!-- <include>
-      <uri>model://balloon.sdf</uri>
-       <static>true</static>
-      <pose>1 0 0 0 0 0</pose>
-      <name>balloon1</name>
-    </include> -->
 
     
 
- 
+    <!--robot-->
     <include>
       <!-- initial pose -->
-      <pose>0 0 0 0 0 0</pose>
+      <pose>0 0 0.5 0 0 0</pose>
 
       <!-- robot model -->
       <uri>model://easys_assembly.sdf</uri>

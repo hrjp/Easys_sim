@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="balloons">
+    <!--yellow 1.5m 10point-->
+    <include>
+      <uri>model://balloon_yellow.sdf</uri>
+      <!-- <static>true</static> -->
+      <pose>0 -1 0 0 0 0</pose>
+      <name>balloon_yellow1</name>
+    </include>
+    <include>
+      <uri>model://balloon_yellow.sdf</uri>
+      <!-- <static>true</static> -->
+      <pose>0 1 0 0 0 0</pose>
+      <name>balloon_yellow2</name>
+    </include>   
+    <include>
+      <uri>model://balloon_yellow.sdf</uri>
+      <!-- <static>true</static> -->
+      <pose>1 0 0 0 0 0</pose>
+      <name>balloon_yellow3</name>
+    </include>   
+    <include>
+      <uri>model://balloon_yellow.sdf</uri>
+      <!-- <static>true</static> -->
+      <pose>-1 0 0 0 0 0</pose>
+      <name>balloon_yellow4</name>
+    </include>
+
+    <!--blue 0.7m -10point-->
+    <include>
+      <uri>model://balloon_blue.sdf</uri>
+      <!-- <static>true</static> -->
+      <pose>1 1 0 0 0 0</pose>
+      <name>balloon_blue1</name>
+    </include>
+    <include>
+      <uri>model://balloon_blue.sdf</uri>
+      <!-- <static>true</static> -->
+      <pose>-1 1 0 0 0 0</pose>
+      <name>balloon_blue2</name>
+    </include>
+    <include>
+      <uri>model://balloon_blue.sdf</uri>
+      <!-- <static>true</static> -->
+      <pose>1 -1 0 0 0 0</pose>
+      <name>balloon_blue3</name>
+    </include>
+    <include>
+      <uri>model://balloon_blue.sdf</uri>
+      <!-- <static>true</static> -->
+      <pose>-1 -1 0 0 0 0</pose>
+      <name>balloon_blue4</name>
+    </include>
+
+    <!--red 0.5m 30point-->
+    <include>
+      <uri>model://balloon_red.sdf</uri>
+      <!-- <static>true</static> -->
+      <pose>2 0 0 0 0 0</pose>
+      <name>balloon_red1</name>
+    </include>
+    <include>
+      <uri>model://balloon_red.sdf</uri>
+      <!-- <static>true</static> -->
+      <pose>-2 0 0 0 0 0</pose>
+      <name>balloon_red2</name>
+    </include>
+    <include>
+      <uri>model://balloon_red.sdf</uri>
+      <!-- <static>true</static> -->
+      <pose>0 2 0 0 0 0</pose>
+      <name>balloon_red3</name>
+    </include>
+    <include>
+      <uri>model://balloon_red.sdf</uri>
+      <!-- <static>true</static> -->
+      <pose>0 -2 0 0 0 0</pose>
+      <name>balloon_red4</name>
+    </include>
+  </model>
+</sdf>

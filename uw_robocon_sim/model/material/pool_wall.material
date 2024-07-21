@@ -1,0 +1,14 @@
+material PoolWallMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture pool_wall.png
+        scale 0.1 0.1
+      }
+    }
+  }
+}

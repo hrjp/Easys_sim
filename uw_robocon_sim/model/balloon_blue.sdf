@@ -3,7 +3,7 @@
   <model name="balloon">
     <!-- balloon -->
     <link name="balloon_link">
-      <pose>0.0 0.0 1.5 0.0 0.0 0.0</pose>
+      <pose>0.0 0.0 0.7 0.0 0.0 0.0</pose>
       <collision name="collision">
           <geometry>
             <sphere>
@@ -30,7 +30,7 @@
         </geometry>
         <material>
           <ambient>0.9 0.9 0.9 1</ambient>
-          <diffuse>1.0 1.0 0.0 1</diffuse>
+          <diffuse>0.0 0.0 1.0 1</diffuse>
           <specular>0 0 0 0</specular>
           <emissive>0 0 0 1</emissive>
         </material>
@@ -39,7 +39,7 @@
 
     <!-- weight -->
     <link name="weight_link">
-      <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+      <pose>0.0 0.0 0.1 0.0 0.0 0.0</pose>
       <collision name="collision">
           <geometry>
             <box>
@@ -48,7 +48,7 @@
           </geometry>
       </collision>
       <inertial>
-        <mass>100.0</mass>
+        <mass>10.0</mass>
         <inertia>
             <ixx>1.000000</ixx>
             <ixy>0</ixy>
