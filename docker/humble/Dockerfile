@@ -6,9 +6,6 @@ RUN cd /home/colcon_ws/src && \
     git clone https://github.com/hrjp/Easys_ros && \
     ./Easys_sim/package_install.bash && \
     cd .. && \
-    pip install setuptools==58.2.0 && \
-    source /opt/ros/humble/setup.sh && \
-    colcon build --symlink-install && \
-    source install/setup.sh && \
+    /bin/bash -c "source /opt/ros/humble/setup.bash; colcon build --symlink-install" && \
     apt clean
 WORKDIR /home/catkin_ws
