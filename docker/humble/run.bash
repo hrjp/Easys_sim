@@ -15,6 +15,7 @@ usage_exit() {
         echo " -----------------------------------------------------------------------------" 1>&2
         echo " -g                   | GPU enabled" 1>&2
         echo " -r                   | remove when exit the container" 1>&2
+        echo " -w                   | Not using --net=host" 1>&2
         echo " -n CONTAINER_NAME    | container name (default : $CONTAINER_NAME )" 1>&2
         echo " -s SHARE_FOLDER_PATH | directory path shared with the inside of the container" 1>&2
         echo " -----------------------------------------------------------------------------" 1>&2
