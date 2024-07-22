@@ -8,6 +8,7 @@ RUN cd /home/colcon_ws/src && \
     cd .. && \
     pip install setuptools==58.2.0 && \
     colcon build --symlink-install && \
+    colcon build --symlink-install && \
     source install/setup.sh && \
     apt clean
 WORKDIR /home/catkin_ws
