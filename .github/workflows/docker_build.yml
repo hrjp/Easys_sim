@@ -39,4 +39,4 @@ jobs:
           build-args: BASE_IMAGE=hrjp/ros2:${{ matrix.rosdistro }}_cuda
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/easys_sim:${{ matrix.rosdistro }}
+            ghcr.io/${{ github.repository_owner }}/easys:${{ matrix.rosdistro }}
