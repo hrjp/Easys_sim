@@ -1,0 +1,86 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="balloon">
+    <!-- balloon -->
+    <link name="balloon_link">
+      <pose>0.0 0.0 0.7 0.0 0.0 0.0</pose>
+      <collision name="collision">
+          <geometry>
+            <sphere>
+              <radius>0.1</radius>
+            </sphere>
+          </geometry>
+      </collision>
+      <inertial>
+        <mass>0.1</mass>
+        <inertia>
+            <ixx>1.000000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.0</iyy>
+            <iyz>0</iyz>
+            <izz>1.0</izz>
+        </inertia>
+      </inertial>
+      <visual name="balloon_visual">
+        <geometry>
+            <sphere>
+              <radius>0.1</radius>
+            </sphere>
+        </geometry>
+        <material>
+          <ambient>0.9 0.9 0.9 1</ambient>
+          <diffuse>0.0 0.0 1.0 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <!-- weight -->
+    <link name="weight_link">
+      <pose>0.0 0.0 0.1 0.0 0.0 0.0</pose>
+      <collision name="collision">
+          <geometry>
+            <box>
+                <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+      </collision>
+      <inertial>
+        <mass>10.0</mass>
+        <inertia>
+            <ixx>1.000000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.0</iyy>
+            <iyz>0</iyz>
+            <izz>1.0</izz>
+        </inertia>
+      </inertial>
+      <visual name="weight_visual">
+        <geometry>
+            <box>
+                <size>0.1 0.1 0.1</size>
+            </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- balloon-weight joint -->
+    <joint name="balloon_joint" type="fixed">
+      <parent>weight_link</parent>
+      <child>balloon_link</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+            <lower>-1e+12</lower>
+            <upper>1e+12</upper>
+            <effort>-1</effort>
+            <velocity>-1</velocity>
+        </limit>
+      </axis>
+    </joint>
+  </model>
+</sdf>

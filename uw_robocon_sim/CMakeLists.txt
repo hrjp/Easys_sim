@@ -6,8 +6,9 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 endif()
 
 # find dependencies
-find_package(ament_cmake REQUIRED)
-find_package(rclcpp REQUIRED)
+find_package(ament_cmake_auto REQUIRED)
+
+ament_auto_find_build_dependencies()
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -21,10 +22,23 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
+# Hooks
+# install model files
+configure_file(
+  "hooks/hook.dsv.in"
+  "${CMAKE_CURRENT_BINARY_DIR}/hooks/hook.dsv" @ONLY
+)
+configure_file(
+  "hooks/hook.sh.in"
+  "${CMAKE_CURRENT_BINARY_DIR}/hooks/hook.sh" @ONLY
+)
+
 install(
   DIRECTORY 
     launch 
     world
+    model
+    ${CMAKE_CURRENT_BINARY_DIR}/hooks
   DESTINATION share/${PROJECT_NAME}
 )
 

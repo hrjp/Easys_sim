@@ -1,0 +1,14 @@
+material PoolGrandMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture pool_grand.png
+        scale 0.1 0.1
+      }
+    }
+  }
+}
