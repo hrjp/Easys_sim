@@ -16,7 +16,7 @@
 
     <!-- robot state publisher -->
     <node pkg="robot_state_publisher" exec="robot_state_publisher" name="robot_state_publisher" output="screen" 
-        args="$(find-pkg-share Easys_description)/model/urdf/easys.urdf">
+        args="$(find-pkg-share Easys_description)/model/urdf/easys_a1.urdf">
     </node>
 
     <!-- joy -->

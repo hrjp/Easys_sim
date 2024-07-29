@@ -1,0 +1,292 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="easys_a1">
+
+    <!-- body -->
+    <link name="base_link">
+      <inertial>
+        <mass>147.8671</mass>
+        <inertia>
+            <ixx>3.000000</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>41.980233</iyy>
+            <iyz>0</iyz>
+            <izz>41.980233</izz>
+        </inertia>
+      </inertial>
+      <collision name="main_body_buoyancy">
+      <pose>0 0 0.1215 0 0 0</pose>
+          <geometry>
+              <box>
+                  <size>2 0.3 0.248445166667</size>
+              </box>
+          </geometry>
+      </collision>
+      <visual name="body_visual">
+        <geometry>
+          <mesh>
+            <uri>stl/easys_a1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.9 0.9 0.9 1</ambient>
+          <diffuse>0.9 0.1 0.1 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <!-- <collision name='collision'>
+        <geometry>
+          <mesh>
+            <uri>stl/easys.stl</uri>
+          </mesh>
+        </geometry>
+      </collision> -->
+      <!-- <collision name="collision">
+          <geometry>
+              <box>
+                  <size>0.1 0.1 0.1</size>
+              </box>
+          </geometry>
+      </collision> -->
+    </link>
+
+  <!-- left down thruster -->
+    <link name="left_down_thruster_link">
+      <pose>0.116 0.04715 0.1215 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.09</mass>
+        <inertia>
+            <ixx>0.000143971303</ixx>
+            <ixy>0.000000000008</ixy>
+            <ixz>-0.000000000224</ixz>
+            <iyy>0.000140915448</iyy>
+            <iyz>-0.000025236433</iyz>
+            <izz>0.000033571862</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+            <box>
+                <size>0.03 0.1 0.03</size>
+            </box>
+        </geometry>
+      </collision>
+      <!-- <visual name="left_down_visual">
+        <geometry>
+              <box>
+                <size>0.05 0.05 0.05</size>
+              </box>
+          </geometry>
+      </visual> -->
+    </link>
+
+    <joint name="left_down_thruster_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>left_down_thruster_link</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+            <lower>-1e+12</lower>
+            <upper>1e+12</upper>
+            <effort>-1</effort>
+            <velocity>-1</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <!-- right down thruster -->
+    <link name="right_down_thruster_link">
+      <pose>-0.116 0.04715 0.1215 0 0 0</pose>
+      <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>0.09</mass>
+          <inertia>
+              <ixx>0.000143971303</ixx>
+              <ixy>0.000000000008</ixy>
+              <ixz>-0.000000000224</ixz>
+              <iyy>0.000140915448</iyy>
+              <iyz>-0.000025236433</iyz>
+              <izz>0.000033571862</izz>
+          </inertia>
+      </inertial>
+      <collision name="collision">
+          <geometry>
+              <box>
+                <size>0.03 0.1 0.03</size>
+              </box>
+          </geometry>
+      </collision>
+      <!-- <visual name="right_down_visual">
+        <geometry>
+              <box>
+                <size>0.05 0.05 0.05</size>
+              </box>
+          </geometry>
+      </visual> -->
+    </link>
+
+    <joint name="right_down_thruster_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>right_down_thruster_link</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+            <lower>-1e+12</lower>
+            <upper>1e+12</upper>
+            <effort>-1</effort>
+            <velocity>-1</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <!-- left up thruster -->
+    <link name="left_up_thruster_link">
+      <pose>0.08255 0 0.22255 0.785 0 1.57</pose>
+      <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>0.09</mass>
+          <inertia>
+              <ixx>0.000143971303</ixx>
+              <ixy>0.000000000008</ixy>
+              <ixz>-0.000000000224</ixz>
+              <iyy>0.000140915448</iyy>
+              <iyz>-0.000025236433</iyz>
+              <izz>0.000033571862</izz>
+          </inertia>
+      </inertial>
+      <collision name="collision">
+          <geometry>
+              <box>
+                <size>0.03 0.1 0.03</size>
+              </box>
+          </geometry>
+      </collision>
+      <!-- <visual name="left_up_visual">
+        <geometry>
+              <box>
+                <size>0.05 0.05 0.05</size>
+              </box>
+          </geometry>
+      </visual> -->
+    </link>
+
+    <joint name="left_up_thruster_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>left_up_thruster_link</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+            <lower>-1e+12</lower>
+            <upper>1e+12</upper>
+            <effort>-1</effort>
+            <velocity>-1</velocity>
+        </limit>
+      </axis>
+    </joint>
+    
+    <!-- right up thruster -->
+    <link name="right_up_thruster_link">
+      <pose>-0.08255 0 0.22255 -0.785 0 1.57</pose>
+      <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>0.09</mass>
+          <inertia>
+              <ixx>0.000143971303</ixx>
+              <ixy>0.000000000008</ixy>
+              <ixz>-0.000000000224</ixz>
+              <iyy>0.000140915448</iyy>
+              <iyz>-0.000025236433</iyz>
+              <izz>0.000033571862</izz>
+          </inertia>
+      </inertial>
+      <collision name="collision">
+          <geometry>
+              <box>
+                <size>0.03 0.1 0.03</size>
+              </box>
+          </geometry>
+      </collision>
+      <!-- <visual name="left_up_visual">
+        <geometry>
+              <box>
+                <size>0.05 0.05 0.05</size>
+              </box>
+          </geometry>
+      </visual> -->
+    </link>
+
+    <joint name="right_up_thruster_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>right_up_thruster_link</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+            <lower>-1e+12</lower>
+            <upper>1e+12</upper>
+            <effort>-1</effort>
+            <velocity>-1</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <!-- IMU -->
+    <plugin
+      filename="gz-sim-imu-system"
+      name="gz::sim::systems::Imu">
+    </plugin>
+    <link name="imu_link">
+        <pose>0 0 0 0 0 1.57</pose>
+        <sensor name="imu" type="imu">
+            <always_on>1</always_on>
+            <update_rate>100</update_rate>
+            <visualize>true</visualize>
+            <topic>imu</topic>
+            <enable_metrics>true</enable_metrics>
+        </sensor>
+    </link>
+    <joint name="imu_joint" type="fixed">
+        <parent>base_link</parent>
+        <child>imu_link</child>
+        <pose>0 0 0 0 0 0</pose>
+    </joint>
+
+    <!-- camera -->
+    <plugin
+      filename="gz-sim-sensors-system"
+      name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <link name="camera_link">
+      <pose>0 0 0 0 0 -1.57</pose>
+      <sensor name="camera" type="camera">
+        <camera>
+          <horizontal_fov>1.047</horizontal_fov>
+          <image>
+            <width>320</width>
+            <height>240</height>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <visualize>true</visualize>
+        <topic>camera</topic>
+      </sensor>
+    </link>
+    <joint name="camera_joint" type="fixed">
+        <parent>base_link</parent>
+        <child>camera_link</child>
+        <pose>0 0 0 0 0 0</pose>
+    </joint>
+  </model>
+</sdf>
