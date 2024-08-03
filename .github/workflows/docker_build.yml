@@ -1,0 +1,42 @@
+name: Docker Image
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  push_to_registry:
+    name: Push Docker image to Github Container registry
+    runs-on: ubuntu-22.04
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        rosdistro: [humble]
+    env:
+      ROS_DISTRO: ${{ matrix.rosdistro }}
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+      - name: Set up Docker Build
+        uses: docker/setup-buildx-action@v1
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and Push to Github Container registry
+        uses: docker/build-push-action@v2
+        with:
+          context: ./docker/${{ matrix.rosdistro }}
+          build-args: BASE_IMAGE=hrjp/ros2:${{ matrix.rosdistro }}_cuda
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository_owner }}/easys_sim:${{ matrix.rosdistro }}

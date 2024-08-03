@@ -48,7 +48,7 @@
           </geometry>
       </collision>
       <inertial>
-        <mass>10.0</mass>
+        <mass>50.0</mass>
         <inertia>
             <ixx>1.000000</ixx>
             <ixy>0</ixy>

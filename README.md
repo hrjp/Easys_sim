@@ -7,6 +7,8 @@ Simple simulator for underwater robot [Easys](https://github.com/tamago117/Easys
 * Gazebo Garden
 
 ## Setup
+
+### Manual setup
 ```bash
 sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
 wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
@@ -20,9 +22,25 @@ colcon build --symlink-install
 source install/setup.sh
 ```
 
+### Use docker
+Setup container
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/hrjp/Easys_sim/main/docker/humble/run.bash)" -w
+```
+On second startup
+```bash
+./easys_sim.bash
+```
+
 ## Usage
+### joy control
 ```bash
 ros2 launch Easys_description sim.launch.xml
+```
+
+### Under Water Robocon
+```bash
+ros2 launch uw_robocon_sim joy_sim.launch.xml
 ```
 
 ## Demo video

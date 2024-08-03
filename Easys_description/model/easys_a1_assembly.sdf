@@ -1,0 +1,90 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+    <include>
+        <!-- robot model -->
+        <uri>model://easys_a1.sdf</uri>
+
+        <!-- TF, odometry plugin -->
+        <plugin
+            filename="gz-sim-odometry-publisher-system"
+            name="gz::sim::systems::OdometryPublisher">
+            <odom_publish_frequency>50</odom_publish_frequency>
+            <odom_topic>/odom</odom_topic>
+            <odom_frame>/map</odom_frame>
+            <dimensions>3</dimensions>
+            <robot_base_frame>base_link</robot_base_frame>
+            <tf_topic>/tf</tf_topic>
+        </plugin>
+
+        <!-- Thruster plugin -->
+        <plugin
+            filename="gz-sim-thruster-system"
+            name="gz::sim::systems::Thruster">
+            <namespace>easys</namespace>
+            <joint_name>left_down_thruster_joint</joint_name>
+            <topic>left_down/cmd_thruster</topic>
+            <thrust_coefficient>0.004422</thrust_coefficient>
+            <fluid_density>1000</fluid_density>
+            <propeller_diameter>0.2</propeller_diameter>
+        </plugin>
+
+        <plugin
+            filename="gz-sim-thruster-system"
+            name="gz::sim::systems::Thruster">
+            <namespace>easys</namespace>
+            <joint_name>right_down_thruster_joint</joint_name>
+            <topic>right_down/cmd_thruster</topic>
+            <thrust_coefficient>0.004422</thrust_coefficient>
+            <fluid_density>1000</fluid_density>
+            <propeller_diameter>0.2</propeller_diameter>
+        </plugin>
+
+        <plugin
+            filename="gz-sim-thruster-system"
+            name="gz::sim::systems::Thruster">
+            <namespace>easys</namespace>
+            <joint_name>left_up_thruster_joint</joint_name>
+            <topic>left_up/cmd_thruster</topic>
+            <thrust_coefficient>0.004422</thrust_coefficient>
+            <fluid_density>1000</fluid_density>
+            <propeller_diameter>0.2</propeller_diameter>
+        </plugin>
+
+        <plugin
+            filename="gz-sim-thruster-system"
+            name="gz::sim::systems::Thruster">
+            <namespace>easys</namespace>
+            <joint_name>right_up_thruster_joint</joint_name>
+            <topic>right_up/cmd_thruster</topic>
+            <thrust_coefficient>0.004422</thrust_coefficient>
+            <fluid_density>1000</fluid_density>
+            <propeller_diameter>0.2</propeller_diameter>
+        </plugin>
+
+        <!-- hydrodynamics plugin-->
+        <plugin
+            filename="gz-sim-hydrodynamics-system"
+            name="gz::sim::systems::Hydrodynamics">
+            <link_name>base_link</link_name>
+            <xDotU>-4.876161</xDotU>
+            <yDotV>-126.324739</yDotV>
+            <zDotW>-126.324739</zDotW>
+            <kDotP>0</kDotP>
+            <mDotQ>-33.46</mDotQ>
+            <nDotR>-33.46</nDotR>
+            <xUabsU>-6.2282</xUabsU>
+            <xU>0</xU>
+            <yVabsV>-601.27</yVabsV>
+            <yV>0</yV>
+            <zWabsW>-601.27</zWabsW>
+            <zW>0</zW>
+            <kPabsP>-0.1916</kPabsP>
+            <kP>0</kP>
+            <mQabsQ>-632.698957</mQabsQ>
+            <mQ>0</mQ>
+            <nRabsR>-632.698957</nRabsR>
+            <nR>0</nR>
+        </plugin>
+    </include>
+
+</sdf>
