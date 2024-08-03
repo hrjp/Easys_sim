@@ -1,6 +1,6 @@
 #!/bin/bash
 
-IMAGE_NAME=hrjp/easys_sim:humble
+IMAGE_NAME=ghcr.io/hrjp/easys_sim:humble
 CONTAINER_NAME=easys_sim
 SHARE_FOLDER_PATH=""
 SHARE_FOLDER_CMD=""
