@@ -5,4 +5,7 @@
     <include file="$(find-pkg-share Easys_description)/launch/sim.launch.xml">
         <arg name="world_file" value="$(var world_file)"/>
     </include>
+
+    <node pkg="uw_robocon_sim" exec="balloon_detect" name="balloon_detect" output="screen">
+    </node>
 </launch>

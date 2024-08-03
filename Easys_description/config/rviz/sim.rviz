@@ -112,8 +112,6 @@ Visualization Manager:
           Value: true
         left_up_thruster_link:
           Value: true
-        map:
-          Value: true
         right_down_thruster_link:
           Value: true
         right_up_thruster_link:
@@ -124,18 +122,7 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        map:
-          base_link:
-            body_link:
-              {}
-            left_down_thruster_link:
-              {}
-            left_up_thruster_link:
-              {}
-            right_down_thruster_link:
-              {}
-            right_up_thruster_link:
-              {}
+        {}
       Update Interval: 0
       Value: true
     - Class: rviz_default_plugins/Image
@@ -150,7 +137,7 @@ Visualization Manager:
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /camera
+        Value: /image_processed
       Value: true
   Enabled: true
   Global Options:
