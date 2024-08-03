@@ -23,6 +23,7 @@ source install/setup.sh
 ```
 
 ### Use docker
+Setup container
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/hrjp/Easys_sim/main/docker/humble/run.bash)" -w
 ```
