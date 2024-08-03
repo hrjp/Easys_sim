@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'uw_robocon_sim'
+package_name = 'balloon_detect'
 #submodule_name = package_name + '/controller'
 
 setup(
@@ -21,7 +21,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'balloon_detect = uw_robocon_sim.balloon_detect:main',
+            'balloon_detect = balloon_detect.balloon_detect:main',
         ],
     },
 )
