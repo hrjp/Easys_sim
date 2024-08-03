@@ -26,5 +26,10 @@ ros2 launch Easys_description sim.launch.xml
 ```
 
 ## Demo video
+
+### Joy control
 https://github.com/hrjp/Easys_sim/assets/36100321/9964a63f-17b5-44a7-9ccb-4f608dd963a4
+
+### Under Water Robocon
+https://github.com/user-attachments/assets/7f006607-5357-4538-9b65-9edd38f892ea
 
