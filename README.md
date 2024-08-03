@@ -24,7 +24,11 @@ source install/setup.sh
 
 ### Use docker
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Easys_sim/main/docker/humble/run.bash)" -g
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/hrjp/Easys_sim/main/docker/humble/run.bash)" -w
+```
+On second startup
+```bash
+./easys_sim.bash
 ```
 
 ## Usage
@@ -35,7 +39,7 @@ ros2 launch Easys_description sim.launch.xml
 
 ### Under Water Robocon
 ```bash
-ros2 launch Easys_description sim.launch.xml
+ros2 launch uw_robocon_sim joy_sim.launch.xml
 ```
 
 ## Demo video
